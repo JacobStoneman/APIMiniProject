@@ -6,15 +6,17 @@ namespace APIMiniProject
 	{
 		ProjectGetService _projectGetService = new ProjectGetService();
 
-		[OneTimeSetUp]
-		public void Setup()
+		[Test]
+		public void GetAllReturnsOK()
 		{
 			_projectGetService.GetAllProjects();
+			Assert.That(_projectGetService.Status, Is.EqualTo(200));
 		}
 
 		[Test]
-		public void RequestSentOK()
+		public void GetByIDReturnsOk()
 		{
+			_projectGetService.GetProjectByID(2257376455);
 			Assert.That(_projectGetService.Status, Is.EqualTo(200));
 		}
 	}
