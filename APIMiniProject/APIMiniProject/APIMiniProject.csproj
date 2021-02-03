@@ -82,8 +82,10 @@
     <Compile Include="Services\DataHandling\ProjectListDTO.cs" />
     <Compile Include="Services\DataHandling\ProjectModel.cs" />
     <Compile Include="Services\HTTPManager\CallManager.cs" />
+    <Compile Include="Services\HTTPManager\ProjectEditCallManager.cs" />
     <Compile Include="Services\HTTPManager\ProjectGetCallManager.cs" />
     <Compile Include="Services\Interfaces\ICallManager.cs" />
+    <Compile Include="Services\Services\ProjectEditService.cs" />
     <Compile Include="Services\Services\ProjectPutService.cs" />
     <Compile Include="Services\Services\ProjectService.cs" />
     <Compile Include="Tests\ProjectCRUDTests.cs" />
