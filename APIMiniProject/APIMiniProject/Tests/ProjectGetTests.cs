@@ -2,7 +2,7 @@
 
 namespace APIMiniProject
 {
-	public class ProjectCRUDTests
+	public class ProjectGetTests
 	{
 		ProjectGetService _projectGetService = new ProjectGetService();
 

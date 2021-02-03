@@ -89,7 +89,7 @@
     <Compile Include="Services\Services\ProjectGetService.cs" />
     <Compile Include="Services\Services\ProjectPutService.cs" />
     <Compile Include="Services\Services\ProjectService.cs" />
-    <Compile Include="Tests\ProjectCRUDTests.cs" />
+    <Compile Include="Tests\ProjectGetTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
