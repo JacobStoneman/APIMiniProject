@@ -1,9 +1,4 @@
 ﻿using RestSharp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace APIMiniProject
 {
@@ -16,6 +11,6 @@ namespace APIMiniProject
 			_client = new RestClient(AppConfigReader.BaseUrl);
 		}
 
-		public abstract string ExecuteRequest();
+		public string ExecuteRequest(IRestRequest request) => _client.Execute(request).Content;
 	}
 }
