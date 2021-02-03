@@ -6,7 +6,7 @@ namespace APIMiniProject
     {
         public ProjectCreateCallManager(IRestClient restClient) : base(restClient) { }
 
-        public string CreateProject(string name, int parentId = -1, int colour = -1, bool favourite = false)
+        public IRestResponse CreateProject(string name, int parentId = -1, int colour = -1, bool favourite = false)
         {
             RestRequest request = new RestRequest("projects", Method.POST);
             request.AddHeader("Authorization", $"Bearer {AppConfigReader.BearerToken}");

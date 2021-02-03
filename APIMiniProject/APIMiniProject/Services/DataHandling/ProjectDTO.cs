@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace APIMiniProject.Services.DataHandling
+namespace APIMiniProject
 {
     public class ProjectDTO
     {
-        public ProjectDTO Project { get; set; }
+        public Project Project { get; set; }
         public void DeserialiseProject(string projectJsonString)
         {
-            Project = JsonConvert.DeserializeObject<ProjectDTO>(projectJsonString);
+            Project = JsonConvert.DeserializeObject<Project>(projectJsonString);
         }
     }
 }
