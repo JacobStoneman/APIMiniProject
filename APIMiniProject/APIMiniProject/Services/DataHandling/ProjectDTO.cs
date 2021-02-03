@@ -10,7 +10,7 @@ namespace APIMiniProject.Services.DataHandling
     public class ProjectDTO
     {
         public ProjectDTO Project { get; set; }
-        public void DeserialiseRates(string projectJsonString)
+        public void DeserialiseProject(string projectJsonString)
         {
             Project = JsonConvert.DeserializeObject<ProjectDTO>(projectJsonString);
         }
