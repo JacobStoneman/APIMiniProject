@@ -10,7 +10,7 @@ namespace APIMiniProject
 		{
 			return string.Empty;
 		}
-		public string GetAllProjects()
+		public IRestResponse GetAllProjects()
 		{
 			RestRequest request = new RestRequest(Method.GET);
 			request.Resource = "projects";

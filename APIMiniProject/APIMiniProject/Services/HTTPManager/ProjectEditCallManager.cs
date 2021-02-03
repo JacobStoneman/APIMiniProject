@@ -14,7 +14,7 @@ namespace APIMiniProject
 		{
 		}
 
-		public string PostProject(int id, JObject jsonbody)
+		public IRestResponse PostProject(int id, JObject jsonbody)
 		{
 			IRestRequest request = new RestRequest(Method.POST);
 			request.Resource = $"projects/{id}";

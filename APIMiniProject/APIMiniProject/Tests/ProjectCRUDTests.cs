@@ -15,7 +15,7 @@ namespace APIMiniProject
 		[Test]
 		public void RequestSentOK()
 		{
-			Assert.That(_projectGetService.Result.ProjectList.Length, Is.GreaterThan(0));
+			Assert.That(_projectGetService.Status, Is.EqualTo(200));
 		}
 	}
 }

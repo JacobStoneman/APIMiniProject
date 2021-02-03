@@ -1,9 +1,4 @@
 ﻿using RestSharp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace APIMiniProject
 {
@@ -11,8 +6,14 @@ namespace APIMiniProject
 	{
 		public ProjectGetCallManager CallManager { get; set; } = new ProjectGetCallManager(new RestClient(AppConfigReader.BaseUrl));
 		public ProjectListDTO Result { get; set; } = new ProjectListDTO();
+		public int Status { get; set; }
 
 		public void GetProjectByID() =>  Result.DeserialiseProjectList(CallManager.GetProjectByID());
-		public void GetAllProjects() => Result.DeserialiseProjectList(CallManager.GetAllProjects());
+		public void GetAllProjects()
+		{
+			IRestResponse response = CallManager.GetAllProjects();
+			Status = (int)response.StatusCode;
+			Result.DeserialiseProjectList(response.Content);
+		}
 	}
 }

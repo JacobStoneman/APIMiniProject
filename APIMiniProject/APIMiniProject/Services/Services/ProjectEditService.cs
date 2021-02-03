@@ -11,6 +11,7 @@ namespace APIMiniProject
 	public class ProjectEditService
 	{
 		public ProjectEditCallManager ProjectEditCallManager { get; set; }
+		public int Status { get; set; }
 		public ProjectEditService(IRestClient client)
 		{
 			ProjectEditCallManager = new ProjectEditCallManager(client);
@@ -23,7 +24,7 @@ namespace APIMiniProject
 			{
 				jsonbody.Add("color", color);
 			}
-			string result = ProjectEditCallManager.PostProject(id, jsonbody);
+			Status = (int)ProjectEditCallManager.PostProject(id, jsonbody).StatusCode;
 		}
 	}
 }
