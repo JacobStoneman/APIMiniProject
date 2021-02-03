@@ -4,13 +4,13 @@ namespace APIMiniProject
 {
 	public abstract class CallManager
 	{
-		protected IRestClient _client;
+		protected IRestClient client;
 
-		public CallManager()
+		public CallManager(IRestClient _client)
 		{
-			_client = new RestClient(AppConfigReader.BaseUrl);
+			client = _client;
 		}
 
-		public string ExecuteRequest(IRestRequest request) => _client.Execute(request).Content;
+		public string ExecuteRequest(IRestRequest request) => client.Execute(request).Content;
 	}
 }
