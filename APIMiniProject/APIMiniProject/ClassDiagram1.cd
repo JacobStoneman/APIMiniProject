@@ -198,7 +198,7 @@
   <Class Name="APIMiniProject.TaskDeleteService">
     <Position X="22.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAEAAAAAAAACAAAAgQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAEAAAAAAAACAAAAAQAABAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Tasks\Services\TaskDeleteService.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -218,8 +218,8 @@
   <Class Name="APIMiniProject.TaskDeleteTests">
     <Position X="22.25" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAIAAAAAABAAAAAAAA=</HashCode>
-      <FileName>Tests\TaskDeleteTests.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAABAgAAAAAAAAAEIAAAAAABAAAAAAQg=</HashCode>
+      <FileName>Tests\Tasks\TaskDeleteTests.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="_taskDeleteService" />

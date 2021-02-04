@@ -8,7 +8,7 @@ namespace APIMiniProject
 		public TaskDTO Result { get; set; } = new TaskDTO();
 		public int Status { get; set; }
 
-		public void DeleteProject(long id)
+		public void DeleteTask(long id)
 		{
 			IRestResponse response = CallManager.DeleteTask(id);
 			Status = (int)response.StatusCode;
