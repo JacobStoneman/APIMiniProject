@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace APIMiniProject
 {
-    public class ProjectCreateService : ProjectService
+    public class ProjectCreateService : Service
     {
         public ProjectCreateCallManager ProjectCreateCallManager { get; set; }
         public ProjectDTO ProjectDTO { get; set; } = new ProjectDTO();
