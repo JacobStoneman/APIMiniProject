@@ -14,7 +14,6 @@ namespace APIMiniProject
         public ProjectCreateCallManager ProjectCreateCallManager { get; set; }
         public ProjectDTO ProjectDTO { get; set; } = new ProjectDTO();
         public JObject ProjectJson { get; set; }
-
         public string Status { get; set; }
 
         public ProjectCreateService(ProjectCreateCallManager projectCreateCallManager)
@@ -22,11 +21,17 @@ namespace APIMiniProject
             ProjectCreateCallManager = projectCreateCallManager;
         }
 
-        public void CreateProjectWithName(string name)
+        public void CreateProject(string name, int parentId = -1, int colour = -1, bool favourite = false)
         {
-            IRestResponse response = ProjectCreateCallManager.CreateProject(name);
-            Status = response.StatusCode.ToString();
+            Dictionary<string, object> parameters = new Dictionary<string, object>();
+            parameters.Add("name", name);
+            if (parentId != -1) { parameters.Add("parent_id", parentId); }
+            if (parentId != -1) { parameters.Add("color", colour); }
+            parameters.Add("favorite", favourite.ToString().ToLower());
 
+            IRestResponse response = ProjectCreateCallManager.CreateProject(parameters);
+            Status = response.StatusCode.ToString();
+            
             string content = response.Content;
             ProjectDTO.DeserialiseProject(content);
             ProjectJson = JsonConvert.DeserializeObject<JObject>(content);
