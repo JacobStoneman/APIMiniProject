@@ -27,28 +27,28 @@ namespace APIMiniProject
         {
             _createService.CreateProject(defaultName);
             _createdId = _createService.ProjectDTO.Project.Id;
-            Assert.That(_createService.Status, Is.EqualTo("OK"));
+            Assert.That(_createService.StatusMessage, Is.EqualTo("OK"));
         }
 
         [Test]
         public void WhenCreateIsCalle_WithNoName_StatusIsBadRequest()
         {
             _createService.CreateProject("");
-            Assert.That(_createService.Status, Is.EqualTo("BadRequest"));
+            Assert.That(_createService.StatusMessage, Is.EqualTo("BadRequest"));
         }
 
         [Test]
         public void WhenCreateIsCalled_WithNameAndInvalidColour_BadRequestReturned()
         {
             _createService.CreateProject(defaultName, colour : 10000);
-            Assert.That(_createService.Status, Is.EqualTo("BadRequest"));
+            Assert.That(_createService.StatusMessage, Is.EqualTo("BadRequest"));
         }
 
         [Test]
         public void WhenCreateIsCalled_WithNameAndInvalidParentId_BadRequestReturned()
         {
             _createService.CreateProject(defaultName, parentId: 1);
-            Assert.That(_createService.Status, Is.EqualTo("BadRequest"));
+            Assert.That(_createService.StatusMessage, Is.EqualTo("BadRequest"));
         }
 
         [Test]
