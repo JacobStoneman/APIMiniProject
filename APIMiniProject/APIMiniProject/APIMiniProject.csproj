@@ -103,7 +103,6 @@
     <Compile Include="Tasks\HTTPManager\TaskDeleteCallManager.cs" />
     <Compile Include="Tasks\Services\TaskDeleteService.cs" />
     <Compile Include="Tasks\Services\TaskGetService.cs" />
-    <Compile Include="Tests\TaskDeleteTests.cs" />
     <Compile Include="Tests\Projects\ProjectEditTests.cs" />
     <Compile Include="Tests\Projects\ProjectCreateTests.cs" />
     <Compile Include="Tests\Projects\ProjectGetTests.cs" />
@@ -111,6 +110,7 @@
     <Compile Include="Tests\Tasks\TaskCreateTests.cs" />
     <Compile Include="Tests\Tasks\TaskEditTests.cs" />
     <Compile Include="Tests\Tasks\TaskGetTests.cs" />
+	<Compile Include="Tests\Tasks\TaskDeleteTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
