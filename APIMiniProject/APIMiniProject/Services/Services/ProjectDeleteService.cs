@@ -5,7 +5,7 @@ namespace APIMiniProject
 	public class ProjectDeleteService
 	{
 		public ProjectDeleteCallManager CallManager { get; set; } = new ProjectDeleteCallManager(new RestClient(AppConfigReader.BaseUrl));
-		public ProjectListDTO Result { get; set; } = new ProjectListDTO();
+		public ProjectDTO Result { get; set; } = new ProjectDTO();
 		public int Status { get; set; }
 
 		//public ProjectDeleteService(ProjectCrCallManager projectCreateCallManager)
@@ -16,7 +16,7 @@ namespace APIMiniProject
 		{
 			IRestResponse response = CallManager.DeleteProject(id);
 			Status = (int)response.StatusCode;
-			Result.DeserialiseProjectList(response.Content);
+			Result.DeserialiseProject(response.Content);
 		}
 
 	}
