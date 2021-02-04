@@ -21,7 +21,7 @@ namespace APIMiniProject
         }
 
         public void CreateTask(string taskContent, long? projectId = null, long? sectionId = null, bool completed = false, long? parentId = null,
-            int? order = null, int? priority = null, string dueString = null, string dueDate = null, DateTime? dueDateTime = null, string dueLang = null)
+            int? order = null, int? priority = null, string dueString = null, string dueLang = null)
         {
             JObject parameters = new JObject();
             parameters.Add("content", taskContent);
@@ -31,7 +31,55 @@ namespace APIMiniProject
             if (order != null) { parameters.Add("order", order); }
             if (priority != null) { parameters.Add("priority", priority); }
             if (dueString != null) { parameters.Add("due_string", dueString); }
+            if (dueLang != null) { parameters.Add("due_lang", dueLang); }
+            parameters.Add("completed", completed.ToString().ToLower());
+
+            IRestResponse response = TaskCreateCallManager.CreateTask(parameters);
+            SetStatus(response);
+
+            string content = response.Content;
+            if (StatusMessage.Equals("OK"))
+            {
+                TaskDTO.DeserialiseTask(content);
+                TaskJson = JsonConvert.DeserializeObject<JObject>(content);
+            }
+        }
+
+        public void CreateTask(string taskContent, long? projectId = null, long? sectionId = null, bool completed = false, long? parentId = null,
+            int? order = null, string dueDate = null, int? priority = null, string dueLang = null)
+        {
+            JObject parameters = new JObject();
+            parameters.Add("content", taskContent);
+            if (projectId != null) { parameters.Add("project_id", projectId); }
+            if (sectionId != null) { parameters.Add("section_id", sectionId); }
+            if (parentId != null) { parameters.Add("parent_id", parentId); }
+            if (order != null) { parameters.Add("order", order); }
+            if (priority != null) { parameters.Add("priority", priority); }
             if (dueDate != null) { parameters.Add("due_string", dueDate); }
+            if (dueLang != null) { parameters.Add("due_lang", dueLang); }
+            parameters.Add("completed", completed.ToString().ToLower());
+
+            IRestResponse response = TaskCreateCallManager.CreateTask(parameters);
+            SetStatus(response);
+
+            string content = response.Content;
+            if (StatusMessage.Equals("OK"))
+            {
+                TaskDTO.DeserialiseTask(content);
+                TaskJson = JsonConvert.DeserializeObject<JObject>(content);
+            }
+        }
+
+        public void CreateTask(string taskContent, long? projectId = null, long? sectionId = null, bool completed = false, long? parentId = null,
+            int? order = null, int? priority = null, DateTime? dueDateTime = null, string dueLang = null)
+        {
+            JObject parameters = new JObject();
+            parameters.Add("content", taskContent);
+            if (projectId != null) { parameters.Add("project_id", projectId); }
+            if (sectionId != null) { parameters.Add("section_id", sectionId); }
+            if (parentId != null) { parameters.Add("parent_id", parentId); }
+            if (order != null) { parameters.Add("order", order); }
+            if (priority != null) { parameters.Add("priority", priority); }
             if (dueDateTime != null) { parameters.Add("due_date_time", dueDateTime); }
             if (dueLang != null) { parameters.Add("due_lang", dueLang); }
             parameters.Add("completed", completed.ToString().ToLower());
