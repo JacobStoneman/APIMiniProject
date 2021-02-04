@@ -2,7 +2,7 @@
 
 namespace APIMiniProject
 {
-	public abstract class ProjectService
+	public abstract class Service
 	{
 		public int StatusCode { get; set; }
 		public string StatusMessage { get; set; }
