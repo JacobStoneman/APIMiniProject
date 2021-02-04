@@ -4,95 +4,97 @@
     <Position X="5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAACAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Services\DataHandling\ProjectDTO.cs</FileName>
+      <FileName>Projects\DataHandling\ProjectDTO.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="APIMiniProject.ProjectListDTO">
     <Position X="6.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
-      <FileName>Services\DataHandling\ProjectListDTO.cs</FileName>
+      <FileName>Projects\DataHandling\ProjectListDTO.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="APIMiniProject.ProjectRoot">
     <Position X="10.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Services\DataHandling\ProjectModel.cs</FileName>
+      <FileName>Projects\DataHandling\ProjectModel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="APIMiniProject.Project">
     <Position X="8.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAESAAQAAAAAAAAAAgAAAAQAAAAAAAAAAQCAgAAAACA=</HashCode>
-      <FileName>Services\DataHandling\ProjectModel.cs</FileName>
+      <FileName>Projects\DataHandling\ProjectModel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="APIMiniProject.CallManager">
-    <Position X="8.25" Y="4" Width="1.5" />
+    <Position X="17.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAAA=</HashCode>
-      <FileName>Services\HTTPManager\CallManager.cs</FileName>
+      <FileName>Shared\HTTPManager\CallManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="APIMiniProject.ProjectCreateCallManager">
-    <Position X="10.5" Y="3.75" Width="2" />
+    <Position X="10.25" Y="3.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
-      <FileName>Services\HTTPManager\ProjectCreateCallManager.cs</FileName>
+      <FileName>Projects\HTTPManager\ProjectCreateCallManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="APIMiniProject.ProjectDeleteCallManager">
-    <Position X="13" Y="3.75" Width="1.5" />
+    <Position X="13.5" Y="3.25" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Services\HTTPManager\ProjectDeleteCallManager.cs</FileName>
+      <FileName>Projects\HTTPManager\ProjectDeleteCallManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="APIMiniProject.ProjectEditCallManager">
-    <Position X="6" Y="4" Width="1.5" />
+    <Position X="7" Y="4.25" Width="2.25" />
     <InheritanceLine Type="APIMiniProject.CallManager" FixedToPoint="true">
       <Path>
-        <Point X="8.594" Y="4" />
-        <Point X="8.594" Y="3.625" />
-        <Point X="6.5" Y="3.625" />
-        <Point X="6.5" Y="4" />
+        <Point X="18.25" Y="4" />
+        <Point X="18.25" Y="3" />
+        <Point X="10.25" Y="3" />
+        <Point X="10.25" Y="3.584" />
+        <Point X="7.75" Y="3.584" />
+        <Point X="7.75" Y="4.25" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Services\HTTPManager\ProjectEditCallManager.cs</FileName>
+      <FileName>Projects\HTTPManager\ProjectEditCallManager.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="APIMiniProject.ProjectGetCallManager">
-    <Position X="4.25" Y="4" Width="1.5" />
+    <Position X="3.25" Y="4" Width="2.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAIAAA=</HashCode>
-      <FileName>Services\HTTPManager\ProjectGetCallManager.cs</FileName>
+      <FileName>Projects\HTTPManager\ProjectGetCallManager.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="APIMiniProject.ProjectService">
-    <Position X="8" Y="6.75" Width="1.5" />
+  <Class Name="APIMiniProject.Service">
+    <Position X="17.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAIAAAAIAAAAA=</HashCode>
-      <FileName>Services\Services\ProjectService.cs</FileName>
+      <FileName>Shared\Services\Service.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="APIMiniProject.ProjectCreateService">
-    <Position X="10.5" Y="6.75" Width="2" />
+    <Position X="8.75" Y="7" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAIAEAAAAAACAA=</HashCode>
-      <FileName>Services\Services\ProjectCreateService.cs</FileName>
+      <FileName>Projects\Services\ProjectCreateService.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="ProjectCreateCallManager" />
     </ShowAsAssociation>
   </Class>
   <Class Name="APIMiniProject.ProjectDeleteService">
-    <Position X="13.25" Y="6.75" Width="1.5" />
+    <Position X="11.75" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAAAAAAAACAAAAgQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Services\Services\ProjectDeleteService.cs</FileName>
+      <FileName>Projects\Services\ProjectDeleteService.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="CallManager" />
@@ -102,7 +104,7 @@
     <Position X="3.25" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAEAAAAAAgAAQAACAAgAAQAAQQgAAAAAAAAAAAIAAA=</HashCode>
-      <FileName>Services\Services\ProjectGetService.cs</FileName>
+      <FileName>Projects\Services\ProjectGetService.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="CallManager" />
@@ -112,7 +114,7 @@
     <Position X="5.75" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAEAAAAAAAAAAAAIAAAAAAAAEAAAAABAAAAAAA=</HashCode>
-      <FileName>Services\Services\ProjectEditService.cs</FileName>
+      <FileName>Projects\Services\ProjectEditService.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="ProjectEditCallManager" />
@@ -139,7 +141,7 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="APIMiniProject.ProjectCreateTests">
-    <Position X="10.5" Y="10" Width="1.5" />
+    <Position X="8.75" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEgAAAAAIACAAQAAAAAACACMAAAAAAgAAAAAAgCAACA=</HashCode>
       <FileName>Tests\ProjectCreateTests.cs</FileName>
@@ -149,13 +151,78 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="APIMiniProject.ProjectDeleteTests">
-    <Position X="13.5" Y="10.5" Width="1.5" />
+    <Position X="12" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAAAAAAAAEABAAAAAAAAAAAAAAIBAEAAABACAAAAAA=</HashCode>
       <FileName>Tests\ProjectDeleteTests.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="_projectDeleteService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="APIMiniProject.TaskModel">
+    <Position X="24.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIECAAQAAgAABAIEAAAAAAIAAAAAAAQAGACBAAAAACA=</HashCode>
+      <FileName>Tasks\DataHandling\TaskModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="APIMiniProject.TaskDTO">
+    <Position X="26.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Tasks\DataHandling\TaskDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="APIMiniProject.TaskListDTO">
+    <Position X="28" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>Tasks\DataHandling\TaskListDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="APIMiniProject.TaskDeleteCallManager">
+    <Position X="21.25" Y="5.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tasks\HTTPManager\TaskDeleteCallManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="APIMiniProject.TaskGetCallManager">
+    <Position X="25.5" Y="4.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tasks\HTTPManager\TaskGetCallManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="APIMiniProject.TaskDeleteService">
+    <Position X="22.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAACAAAAgQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tasks\Services\TaskDeleteService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CallManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="APIMiniProject.TaskGetService">
+    <Position X="26" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAgAAQAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tasks\Services\TaskGetService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CallManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="APIMiniProject.TaskDeleteTests">
+    <Position X="22.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAIAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Tests\TaskDeleteTests.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_taskDeleteService" />
     </ShowAsAssociation>
   </Class>
   <Font Name="Segoe UI" Size="9" />

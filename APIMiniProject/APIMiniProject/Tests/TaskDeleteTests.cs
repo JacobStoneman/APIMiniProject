@@ -21,5 +21,8 @@ namespace APIMiniProject
             Assert.That(_taskDeleteService.CallManager.DeleteTask(123).StatusCode.ToString(), Is.EqualTo("BadRequest")); //404: BadRequest
         }
 
+        //test to check when you search id it doesnt show up
+        //test to see when u search all tasks its not there
+
     }
 }
