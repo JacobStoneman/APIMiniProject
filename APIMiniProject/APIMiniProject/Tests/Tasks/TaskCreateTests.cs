@@ -56,7 +56,7 @@ namespace APIMiniProject
         [Test]
         public void WhenCreateTaskIsCalledWithNoName_StatusIsBadRequest()
         {
-            _createService.CreateTaskDueDateString(_defaultName);
+            _createService.CreateTaskDueDateString("");
             _createdTaskId = _createService.TaskDTO.Task.Id;
             Assert.That(_createService.StatusMessage, Is.EqualTo("BadRequest"));
         }
