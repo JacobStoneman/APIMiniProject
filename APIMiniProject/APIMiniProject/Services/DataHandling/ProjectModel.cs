@@ -22,6 +22,6 @@ namespace APIMiniProject
         public int Sync_id { get; set; }
         public bool Inbox_project { get; set; }
         public int Order { get; set; }
-        public int Parent_id { get; set; }
+        public long Parent_id { get; set; }
     }
 }
