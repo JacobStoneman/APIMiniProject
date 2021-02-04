@@ -25,7 +25,7 @@ namespace APIMiniProject
 	{
 		public TaskGetCallManager(IRestClient _client) : base(_client) {}
 
-		public IRestResponse GetActiveTasksByID(TaskParameter parameters)
+		public IRestResponse GetActiveTasks(TaskParameter parameters)
 		{
 			RestRequest request = new RestRequest(Method.GET);
 			request.Resource = $"tasks";
