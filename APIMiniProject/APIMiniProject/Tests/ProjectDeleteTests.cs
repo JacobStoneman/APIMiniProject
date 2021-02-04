@@ -14,6 +14,7 @@ namespace APIMiniProject
             // create a test 
             ProjectCreateService _createService = new ProjectCreateService(new ProjectCreateCallManager(new RestClient(AppConfigReader.BaseUrl)));
             _createService.CreateProjectWithName("Test Delete Function");
+            if (_projectGetService.CallManager.GetProjectByID()
 
         }
 
