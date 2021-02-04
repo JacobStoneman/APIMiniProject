@@ -18,34 +18,34 @@ namespace APIMiniProject
 			TaskEditCallManager = taskEditCallManager;
 		}
 
-		public void EditTask(long id, string content = "", long[] label_ids = null, int priority = -1, string due_string = "", string due_date = "", string due_datetime = "", string due_lang = "", long assignee = -1)
+		public void EditTask(long id, string content = "", int? priority = null, string due_string = null, string due_date = null, string due_datetime = null, string due_lang = null, long? assignee = null)
 		{
 			JObject jsonbody = new JObject();
 			if (content != "")
 			{
 				jsonbody.Add("content", content);
 			}
-			if (priority > -1)
+			if (priority != null)
 			{
 				jsonbody.Add("priority", priority);
 			}
-			if (due_string != "")
+			if (due_string != null)
 			{
 				jsonbody.Add("due_string", due_string);
 			}
-			if (due_date != "")
+			if (due_date != null)
 			{
 				jsonbody.Add("due_date", due_date);
 			}
-			if (due_datetime != "")
+			if (due_datetime != null)
 			{
 				jsonbody.Add("due_datetime", due_datetime);
 			}
-			if (due_lang != "")
+			if (due_lang != null)
 			{
 				jsonbody.Add("due_lang", due_lang);
 			}
-			if (assignee > -1)
+			if (assignee != null)
 			{
 				jsonbody.Add("assignee", assignee);
 			}
