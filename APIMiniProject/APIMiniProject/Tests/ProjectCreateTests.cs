@@ -58,7 +58,7 @@ namespace APIMiniProject
             _createdId = _createService.ProjectDTO.Project.Id;
             var responseDTO = _createService.ProjectDTO.Project;
             Assert.That(responseDTO.Name, Is.EqualTo(defaultName));
-            Assert.That(responseDTO.Color, Is.GreaterThan(0));
+            Assert.That(responseDTO.Color, Is.Not.Null);
             Assert.That(responseDTO.Favorite, Is.Not.Null);
         }
 

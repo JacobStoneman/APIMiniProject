@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿    using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RestSharp;
 using System;
@@ -21,12 +21,12 @@ namespace APIMiniProject
             ProjectCreateCallManager = projectCreateCallManager;
         }
 
-        public void CreateProject(string name, long parentId = -1, int colour = -1, bool favourite = false)
+        public void CreateProject(string name, long? parentId = null, int? colour = null, bool favourite = false)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("name", name);
-            if (parentId != -1) { parameters.Add("parent_id", parentId); }
-            if (colour != -1) { parameters.Add("color", colour); }
+            if (parentId != null) { parameters.Add("parent_id", parentId); }
+            if (colour != null) { parameters.Add("color", colour); }
             parameters.Add("favorite", favourite.ToString().ToLower());
 
             IRestResponse response = ProjectCreateCallManager.CreateProject(parameters);
