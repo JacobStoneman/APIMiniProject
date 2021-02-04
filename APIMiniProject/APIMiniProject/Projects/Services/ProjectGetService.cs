@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace APIMiniProject
 {
-	public class ProjectGetService : ProjectService
+	public class ProjectGetService : Service
 	{
 		public ProjectGetCallManager CallManager { get; set; } = new ProjectGetCallManager(new RestClient(AppConfigReader.BaseUrl));
 		public ProjectListDTO Result { get; set; } = new ProjectListDTO();

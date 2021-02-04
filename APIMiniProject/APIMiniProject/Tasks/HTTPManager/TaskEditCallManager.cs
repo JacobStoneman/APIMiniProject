@@ -8,17 +8,19 @@ using RestSharp;
 
 namespace APIMiniProject
 {
-	public class ProjectEditCallManager : CallManager
+	public class TaskEditCallManager : CallManager
 	{
-		public ProjectEditCallManager(IRestClient _client) : base(_client)
+		public TaskEditCallManager(IRestClient _client) : base(_client)
 		{
 		}
 
-		public IRestResponse PostProject(int id, JObject jsonbody)
+		public IRestResponse PostTask(long id, JObject jsonbody)
 		{
 			IRestRequest request = new RestRequest(Method.POST);
-			request.Resource = $"projects/{id}";
+			request.Resource = $"tasks/{id}";
 			request.AddJsonBody(jsonbody.ToString());
+			request.AddHeader("Authorization", $"Bearer {AppConfigReader.BearerToken}");
+
 
 			return ExecuteRequest(request);
 		}

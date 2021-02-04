@@ -78,28 +78,44 @@
   <ItemGroup>
     <Compile Include="AppConfigReader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\DataHandling\ProjectDTO.cs" />
-    <Compile Include="Services\DataHandling\ProjectListDTO.cs" />
-    <Compile Include="Services\DataHandling\ProjectModel.cs" />
-    <Compile Include="Services\HTTPManager\CallManager.cs" />
-    <Compile Include="Services\HTTPManager\ProjectDeleteCallManager.cs" />
-    <Compile Include="Services\HTTPManager\ProjectCreateCallManager.cs" />
-    <Compile Include="Services\HTTPManager\ProjectEditCallManager.cs" />
-    <Compile Include="Services\HTTPManager\ProjectGetCallManager.cs" />
-    <Compile Include="Services\Interfaces\ICallManager.cs" />
-    <Compile Include="Services\Services\ProjectEditService.cs" />
-    <Compile Include="Services\Services\ProjectCreateService.cs" />
-    <Compile Include="Services\Services\ProjectDeleteService.cs" />
-    <Compile Include="Services\Services\ProjectPutService.cs" />
-    <Compile Include="Services\Services\ProjectGetService.cs" />
-    <Compile Include="Services\Services\ProjectService.cs" />
+    <Compile Include="Projects\DataHandling\ProjectDTO.cs" />
+    <Compile Include="Projects\DataHandling\ProjectListDTO.cs" />
+    <Compile Include="Projects\DataHandling\ProjectModel.cs" />
+    <Compile Include="Shared\HTTPManager\CallManager.cs" />
+    <Compile Include="Projects\HTTPManager\ProjectDeleteCallManager.cs" />
+    <Compile Include="Projects\HTTPManager\ProjectCreateCallManager.cs" />
+    <Compile Include="Projects\HTTPManager\ProjectEditCallManager.cs" />
+    <Compile Include="Projects\HTTPManager\ProjectGetCallManager.cs" />
+    <Compile Include="Shared\Interfaces\ICallManager.cs" />
+    <Compile Include="Projects\Services\ProjectEditService.cs" />
+    <Compile Include="Projects\Services\ProjectCreateService.cs" />
+    <Compile Include="Projects\Services\ProjectDeleteService.cs" />
+    <Compile Include="Projects\Services\ProjectPutService.cs" />
+    <Compile Include="Projects\Services\ProjectGetService.cs" />
+    <Compile Include="Shared\Services\Service.cs" />
+    <Compile Include="Tasks\DataHandling\TaskDTO.cs" />
+    <Compile Include="Tasks\DataHandling\TaskListDTO.cs" />
+    <Compile Include="Tasks\DataHandling\TaskModel.cs" />
+    <Compile Include="Tasks\HTTPManager\TaskCreateCallManager.cs" />
     <Compile Include="Tasks\HTTPManager\TaskGetCallManager.cs" />
+    <Compile Include="Tasks\Services\TaskCreateService.cs" />
+    <Compile Include="Tasks\HTTPManager\TaskEditCallManager.cs" />
+    <Compile Include="Tasks\Services\TaskEditService.cs" />
+    <Compile Include="Tasks\HTTPManager\TaskDeleteCallManager.cs" />
+    <Compile Include="Tasks\Services\TaskDeleteService.cs" />
+    <Compile Include="Tasks\Services\TaskGetService.cs" />
+    <Compile Include="Tests\TaskDeleteTests.cs" />
     <Compile Include="Tests\ProjectEditTests.cs" />
     <Compile Include="Tests\ProjectCreateTests.cs" />
     <Compile Include="Tests\ProjectGetTests.cs" />
+    <Compile Include="Tests\ProjectDeleteTests.cs" />
+    <Compile Include="Tests\Tasks\TaskCreateTests.cs" />
+    <Compile Include="Tests\Tasks\TaskEditTests.cs" />
+    <Compile Include="Tests\Tasks\TaskGetTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
