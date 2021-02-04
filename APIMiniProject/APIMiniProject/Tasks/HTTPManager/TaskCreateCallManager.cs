@@ -18,8 +18,7 @@ namespace APIMiniProject
 
             request.AddHeader("Authorization", $"Bearer {AppConfigReader.BearerToken}");
             request.AddHeader("Content-Type", "application/json");
-            var requestObject = new JObject(new JProperty("content", parameters["content"]));
-            request.AddJsonBody(requestObject.ToString());
+            request.AddJsonBody(parameters.ToString());
             return ExecuteRequest(request);
         }
     }

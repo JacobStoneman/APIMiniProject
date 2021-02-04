@@ -20,7 +20,7 @@ namespace APIMiniProject
             TaskCreateCallManager = taskCreateCallManager;
         }
 
-        public void CreateTaskDueString(string taskContent, long? projectId = null, long? sectionId = null, bool completed = false, long? parentId = null,
+        public void CreateTaskDueString(string taskContent, long? projectId = null, long? sectionId = null, long? parentId = null,
             int? order = null, int? priority = null, string dueString = null, string dueLang = null)
         {
             JObject parameters = new JObject();
@@ -32,7 +32,6 @@ namespace APIMiniProject
             if (priority != null) { parameters.Add("priority", priority); }
             if (dueString != null) { parameters.Add("due_string", dueString); }
             if (dueLang != null) { parameters.Add("due_lang", dueLang); }
-            parameters.Add("completed", completed.ToString().ToLower());
 
             IRestResponse response = TaskCreateCallManager.CreateTask(parameters);
             SetStatus(response);
@@ -45,7 +44,7 @@ namespace APIMiniProject
             }
         }
 
-        public void CreateTaskDueDateString(string taskContent, long? projectId = null, long? sectionId = null, bool completed = false, long? parentId = null,
+        public void CreateTaskDueDateString(string taskContent, long? projectId = null, long? sectionId = null, long? parentId = null,
             int? order = null, string dueDate = null, int? priority = null, string dueLang = null)
         {
             JObject parameters = new JObject();
@@ -57,7 +56,6 @@ namespace APIMiniProject
             if (priority != null) { parameters.Add("priority", priority); }
             if (dueDate != null) { parameters.Add("due_string", dueDate); }
             if (dueLang != null) { parameters.Add("due_lang", dueLang); }
-            parameters.Add("completed", completed.ToString().ToLower());
 
             IRestResponse response = TaskCreateCallManager.CreateTask(parameters);
             SetStatus(response);
@@ -70,8 +68,8 @@ namespace APIMiniProject
             }
         }
 
-        public void CreateTaskDueDateTime(string taskContent, long? projectId = null, long? sectionId = null, bool completed = false, long? parentId = null,
-            int? order = null, int? priority = null, DateTime? dueDateTime = null, string dueLang = null)
+        public void CreateTaskDueDateTime(string taskContent, long? projectId = null, long? sectionId = null, long? parentId = null,
+            int? order = null, int? priority = null, string dueDateTime = null, string dueLang = null)
         {
             JObject parameters = new JObject();
             parameters.Add("content", taskContent);
@@ -80,9 +78,8 @@ namespace APIMiniProject
             if (parentId != null) { parameters.Add("parent_id", parentId); }
             if (order != null) { parameters.Add("order", order); }
             if (priority != null) { parameters.Add("priority", priority); }
-            if (dueDateTime != null) { parameters.Add("due_date_time", dueDateTime); }
+            if (dueDateTime != null) { parameters.Add("due_datetime", dueDateTime); }
             if (dueLang != null) { parameters.Add("due_lang", dueLang); }
-            parameters.Add("completed", completed.ToString().ToLower());
 
             IRestResponse response = TaskCreateCallManager.CreateTask(parameters);
             SetStatus(response);
