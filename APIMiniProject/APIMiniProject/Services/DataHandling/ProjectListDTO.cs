@@ -4,7 +4,7 @@ namespace APIMiniProject
 {
 	public class ProjectListDTO
 	{
-        public Project[] ProjectList { get; set; }
+        public Project[] ProjectList { get; set; } = new Project[1];
         public void DeserialiseProjectList(string projectListJsonString, bool isArray)
         {
             if (isArray)
