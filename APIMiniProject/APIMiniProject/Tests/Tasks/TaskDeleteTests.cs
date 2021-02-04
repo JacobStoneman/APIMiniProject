@@ -16,6 +16,7 @@ namespace APIMiniProject
             // create task
             //find task id 
             // delete task
+
             //_taskCreateService.CreateTask("Test Delete Task");
             //long id = _taskCreateService.ProjectDTO.Project.Id;
 
@@ -33,14 +34,15 @@ namespace APIMiniProject
         [Test]
         public void DeleteTaskThatNeverExisted()
         {
-            Assert.That(_taskDeleteService.CallManager.DeleteTask(123).StatusCode.ToString(), Is.EqualTo("BadRequest")); //404: BadRequest
+            Assert.That(_taskDeleteService.CallManager.DeleteTask(123).StatusCode.ToString(), Is.EqualTo("BadRequest")); //404 : BadRequest
         }
 
         [Ignore("waiting for get methods")]
         [Test]
         public void TheTaskIsNoLongerThereByGetAllTasks()
         {
-            // get all by ?? 
+            // get all by ??
+            _taskGetService.GetActiveTasks.
             Assert.That(_taskGetService.Result.Tasks.Length, Is.EqualTo(0)); //404: NotFound
         }
 
