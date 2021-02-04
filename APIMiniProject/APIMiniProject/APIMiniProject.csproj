@@ -94,6 +94,7 @@
     <Compile Include="Projects\Services\ProjectGetService.cs" />
     <Compile Include="Shared\Services\Service.cs" />
     <Compile Include="Tasks\DataHandling\TaskDTO.cs" />
+    <Compile Include="Tasks\DataHandling\TaskListDTO.cs" />
     <Compile Include="Tasks\DataHandling\TaskModel.cs" />
     <Compile Include="Tasks\HTTPManager\TaskDeleteCallManager.cs" />
     <Compile Include="Tasks\HTTPManager\TaskGetCallManager.cs" />

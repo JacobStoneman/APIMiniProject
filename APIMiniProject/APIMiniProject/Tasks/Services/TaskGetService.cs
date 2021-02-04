@@ -5,11 +5,12 @@ namespace APIMiniProject
 	public class TaskGetService : Service
 	{
 		public TaskGetCallManager CallManager { get; set; } = new TaskGetCallManager(new RestClient(AppConfigReader.BaseUrl));
+		public TaskListDTO Result { get; set; } = new TaskListDTO();
 
 		public void ProcessResult(IRestResponse response)
 		{
 			SetStatus(response);
-			//if (StatusMessage == "OK") Result.DeserialiseProjectList(response.Content, isArray);
+			if (StatusMessage == "OK") Result.DeserialiseTask(response.Content);
 		}
 
 		public void GetActiveTasks(long? projectID = null, long? labelID = null, string Filter = null, string Lang = null, long[] IDs = null)
