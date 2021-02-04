@@ -17,6 +17,11 @@ namespace APIMiniProject
 
             _projectDeleteService.DeleteProject(id);
         }
+        [Test]
+        public void RequestSentOK()
+        {
+            Assert.That(_projectDeleteService.Status, Is.EqualTo(204)); //204 : No Content
+        }
 
         [Test]
         public void TheProjectIsNoLongerThereByGetAllProjects()
@@ -25,11 +30,6 @@ namespace APIMiniProject
             Assert.That(_projectGetService.Result.ProjectList.Length, Is.EqualTo(0)); //404: NotFound
         }
 
-        [Test]
-        public void RequestSentOK()
-        {
-            Assert.That(_projectDeleteService.Status, Is.EqualTo(204)); //204 : No Content
-        }
 
         [Test]
         public void TheProjectIsNoLongerThereByGetProject()
