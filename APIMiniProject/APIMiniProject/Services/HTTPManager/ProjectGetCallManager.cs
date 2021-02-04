@@ -6,9 +6,12 @@ namespace APIMiniProject
 	{
 		public ProjectGetCallManager(IRestClient _client) : base(_client) {}
 
-		public string GetProjectByID()
+		public IRestResponse GetProjectByID(long id)
 		{
-			return string.Empty;
+			RestRequest request = new RestRequest(Method.GET);
+			request.Resource = $"projects/{id}";
+			request.AddHeader("Authorization", $"Bearer {AppConfigReader.BearerToken}");
+			return ExecuteRequest(request);
 		}
 		public IRestResponse GetAllProjects()
 		{
