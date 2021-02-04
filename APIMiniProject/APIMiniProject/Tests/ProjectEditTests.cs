@@ -5,7 +5,7 @@ namespace APIMiniProject
 {
     public class ProjectEditTests
     {
-        ProjectCreateService _createService = new ProjectCreateService(new ProjectCreateCallManager(new RestClient(AppConfigReader.BaseUrl)));
+        ProjectEditService _createService = new ProjectEditService(new ProjectEditCallManager(new RestClient(AppConfigReader.BaseUrl)));
 
         [Test]
         public void PostCallSuccessfullyEditsName()
