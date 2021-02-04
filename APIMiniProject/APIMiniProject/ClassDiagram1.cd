@@ -124,7 +124,7 @@
     <Position X="3.25" Y="10.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAgAACEAIEQAAAAAAAIAABAAAAAAAEIAAAADAAUAAA=</HashCode>
-      <FileName>Tests\ProjectGetTests.cs</FileName>
+      <FileName>Tests\Projects\ProjectGetTests.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="_projectGetService" />
@@ -134,7 +134,7 @@
     <Position X="6" Y="10" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAYAAAAAAAAAAEAAAAAAAAAAAAAAAHAAAQAAAQAAgAA=</HashCode>
-      <FileName>Tests\ProjectEditTests.cs</FileName>
+      <FileName>Tests\Projects\ProjectEditTests.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="_editService" />
@@ -143,8 +143,8 @@
   <Class Name="APIMiniProject.ProjectCreateTests">
     <Position X="8.75" Y="9.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEgAAAAAIACAAQAAAAAACACMAAAAAAgAAAAAAgCAACA=</HashCode>
-      <FileName>Tests\ProjectCreateTests.cs</FileName>
+      <HashCode>AEgAAAAAIACAAQAAAAAACACMAAAAQAgAAAAAAgAAACA=</HashCode>
+      <FileName>Tests\Projects\ProjectCreateTests.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="_createService" />
@@ -154,7 +154,7 @@
     <Position X="12" Y="9.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAAAAAAAAEABAAAAAAAAAAAAAAIBAEAAABACAAAAAA=</HashCode>
-      <FileName>Tests\ProjectDeleteTests.cs</FileName>
+      <FileName>Tests\Projects\ProjectDeleteTests.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="_projectDeleteService" />
@@ -218,12 +218,76 @@
   <Class Name="APIMiniProject.TaskDeleteTests">
     <Position X="22.25" Y="10.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAABAgAAAAAAAAAEIAAAAAABAAAAAAQg=</HashCode>
+      <HashCode>AAAAAAAAAAAAAABAgAAAAAAAAAUIAAAAAABAAAAAAQg=</HashCode>
       <FileName>Tests\Tasks\TaskDeleteTests.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="_taskDeleteService" />
     </ShowAsAssociation>
+  </Class>
+  <Class Name="APIMiniProject.TaskEditTests">
+    <Position X="29.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgIAAAAAAAABAEAAAAAAAEAAAAAAAAAAAQAAAQAAAAA=</HashCode>
+      <FileName>Tests\Tasks\TaskEditTests.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_editService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="APIMiniProject.TaskGetTests">
+    <Position X="25.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAICEAAAgAAAAAAAABAAAAAAgBAAAAAAAAAACAAAg=</HashCode>
+      <FileName>Tests\Tasks\TaskGetTests.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_taskGetService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="APIMiniProject.TaskCreateTests">
+    <Position X="33.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUYAAAAAAAAgAAAAAAACAAAAAAAAQQAAAQCAAAAAAAA=</HashCode>
+      <FileName>Tests\Tasks\TaskCreateTests.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_createService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="APIMiniProject.TaskCreateService">
+    <Position X="33.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgQBAAAAAAAIAAAAAAAAAAAAAAAQAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Tasks\Services\TaskCreateService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TaskCreateCallManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="APIMiniProject.TaskEditService">
+    <Position X="30" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgEAACAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Tasks\Services\TaskEditService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TaskEditCallManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="APIMiniProject.TaskEditCallManager">
+    <Position X="30" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Tasks\HTTPManager\TaskEditCallManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="APIMiniProject.TaskCreateCallManager">
+    <Position X="33.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAA=</HashCode>
+      <FileName>Tasks\HTTPManager\TaskCreateCallManager.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
