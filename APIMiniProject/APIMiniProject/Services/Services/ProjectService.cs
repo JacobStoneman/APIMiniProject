@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RestSharp;
 
-namespace APIMiniProject.Services.Services
+namespace APIMiniProject
 {
-	class ProjectService
+	public abstract class ProjectService
 	{
+		public int StatusCode { get; set; }
+		public string StatusMessage { get; set; }
+
+		public void SetStatus(IRestResponse response)
+		{
+			StatusCode = (int)response.StatusCode;
+			StatusMessage = response.StatusCode.ToString();
+		}
 	}
 }

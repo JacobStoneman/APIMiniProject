@@ -3,28 +3,19 @@ using System.Collections.Generic;
 
 namespace APIMiniProject
 {
-	public class ProjectGetService
+	public class ProjectGetService : ProjectService
 	{
 		public ProjectGetCallManager CallManager { get; set; } = new ProjectGetCallManager(new RestClient(AppConfigReader.BaseUrl));
 		public ProjectListDTO Result { get; set; } = new ProjectListDTO();
-		public int Status { get; set; }
 
 		public void ProcessResult(IRestResponse response, bool isArray)
 		{
-			Status = (int)response.StatusCode;
-			Result.DeserialiseProjectList(response.Content, isArray);
+			SetStatus(response);
+			if (StatusMessage == "OK") Result.DeserialiseProjectList(response.Content, isArray);
 		}
 
-		public void GetProjectByID(long id)
-		{
-			IRestResponse response = CallManager.GetProjectByID(id);
-			ProcessResult(response, false);
-		}
-		public void GetAllProjects()
-		{
-			IRestResponse response = CallManager.GetAllProjects();
-			ProcessResult(response, true);
-		}
+		public void GetProjectByID(long id) => ProcessResult(CallManager.GetProjectByID(id), false);
+		public void GetAllProjects() =>	ProcessResult(CallManager.GetAllProjects(), true);
 
 		public void GetAllByColour(int colourID)
 		{
