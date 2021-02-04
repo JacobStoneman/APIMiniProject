@@ -12,6 +12,7 @@ namespace APIMiniProject
     public class TaskCreateTests
     {
         private TaskCreateService _createService = new TaskCreateService(new TaskCreateCallManager(new RestClient(AppConfigReader.BaseUrl)));
+        private readonly string _defaultName = "TaskTest";
         private long _createdProjectId = -1;
         private long _createdTaskId = -1;
 
@@ -29,19 +30,49 @@ namespace APIMiniProject
         }
 
         [Test]
-        public void WhenCreateIsCalledCorrectly_StatusIsOk()
+        public void WhenCreateTaskDueDateTimeIsCalledCorrectly_StatusIsOk()
         {
-            _createService.CreateTaskDueDateTime("Test");
+            _createService.CreateTaskDueDateTime(_defaultName);
             _createdTaskId = _createService.TaskDTO.Task.Id;
             Assert.That(_createService.StatusMessage, Is.EqualTo("OK"));
+        }
+
+        [Test]
+        public void WhenCreateTaskDueStringIsCalledCorrectly_StatusIsOk()
+        {
+            _createService.CreateTaskDueString(_defaultName);
+            _createdTaskId = _createService.TaskDTO.Task.Id;
+            Assert.That(_createService.StatusMessage, Is.EqualTo("OK"));
+        }
+
+        [Test]
+        public void WhenCreateTaskDueDateStringIsCalledCorrectly_StatusIsOk()
+        {
+            _createService.CreateTaskDueDateString(_defaultName);
+            _createdTaskId = _createService.TaskDTO.Task.Id;
+            Assert.That(_createService.StatusMessage, Is.EqualTo("OK"));
+        }
+
+        [Test]
+        public void WhenCreateTaskIsCalledWithNoName_StatusIsBadRequest()
+        {
+            _createService.CreateTaskDueDateString(_defaultName);
+            _createdTaskId = _createService.TaskDTO.Task.Id;
+            Assert.That(_createService.StatusMessage, Is.EqualTo("BadRequest"));
         }
 
         [OneTimeTearDown]
         public void TearDownMethod()
         {
+            if (_createdTaskId != 1)
+            {
+                RestRequest request = new RestRequest($"tasks/{_createdTaskId}", Method.DELETE);
+                request.AddHeader("Authorization", $"Bearer {AppConfigReader.BearerToken}");
+                var restClient = new RestClient(AppConfigReader.BaseUrl);
+                restClient.Execute(request);
+            }
             if (_createdProjectId != -1)
             {
-                // build a request and then delete
                 RestRequest request = new RestRequest($"projects/{_createdProjectId}", Method.DELETE);
                 request.AddHeader("Authorization", $"Bearer {AppConfigReader.BearerToken}");
                 var restClient = new RestClient(AppConfigReader.BaseUrl);
