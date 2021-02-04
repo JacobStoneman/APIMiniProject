@@ -83,14 +83,15 @@
     <Compile Include="Services\DataHandling\ProjectModel.cs" />
     <Compile Include="Services\HTTPManager\CallManager.cs" />
     <Compile Include="Services\HTTPManager\ProjectCreateCallManager.cs" />
-	<Compile Include="Services\HTTPManager\ProjectEditCallManager.cs" />
+    <Compile Include="Services\HTTPManager\ProjectEditCallManager.cs" />
     <Compile Include="Services\HTTPManager\ProjectGetCallManager.cs" />
     <Compile Include="Services\Interfaces\ICallManager.cs" />
-	<Compile Include="Services\Services\ProjectEditService.cs" />
+    <Compile Include="Services\Services\ProjectEditService.cs" />
     <Compile Include="Services\Services\ProjectCreateService.cs" />
     <Compile Include="Services\Services\ProjectPutService.cs" />
-	<Compile Include="Services\Services\ProjectGetService.cs" />
+    <Compile Include="Services\Services\ProjectGetService.cs" />
     <Compile Include="Services\Services\ProjectService.cs" />
+    <Compile Include="Tests\ProjectEditTests.cs" />
     <Compile Include="Tests\ProjectCreateTests.cs" />
     <Compile Include="Tests\ProjectGetTests.cs" />
   </ItemGroup>
