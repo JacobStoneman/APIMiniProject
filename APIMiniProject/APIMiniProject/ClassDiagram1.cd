@@ -71,5 +71,92 @@
       <FileName>Services\HTTPManager\ProjectGetCallManager.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="APIMiniProject.ProjectService">
+    <Position X="8" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAIAAAAIAAAAA=</HashCode>
+      <FileName>Services\Services\ProjectService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="APIMiniProject.ProjectCreateService">
+    <Position X="10.5" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAIAEAAAAAACAA=</HashCode>
+      <FileName>Services\Services\ProjectCreateService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ProjectCreateCallManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="APIMiniProject.ProjectDeleteService">
+    <Position X="13.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAACAAAAgQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\Services\ProjectDeleteService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CallManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="APIMiniProject.ProjectGetService">
+    <Position X="3.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAgAAQAACAAgAAQAAQQgAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Services\Services\ProjectGetService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CallManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="APIMiniProject.ProjectEditService">
+    <Position X="5.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAIAAAAAAAAEAAAAABAAAAAAA=</HashCode>
+      <FileName>Services\Services\ProjectEditService.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ProjectEditCallManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="APIMiniProject.ProjectGetTests">
+    <Position X="3.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAACEAIEQAAAAAAAIAABAAAAAAAEIAAAADAAUAAA=</HashCode>
+      <FileName>Tests\ProjectGetTests.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_projectGetService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="APIMiniProject.ProjectEditTests">
+    <Position X="6" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAEAAAAAAAAAAAAAAAHAAAQAAAQAAgAA=</HashCode>
+      <FileName>Tests\ProjectEditTests.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_editService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="APIMiniProject.ProjectCreateTests">
+    <Position X="10.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEgAAAAAIACAAQAAAAAACACMAAAAAAgAAAAAAgCAACA=</HashCode>
+      <FileName>Tests\ProjectCreateTests.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_createService" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="APIMiniProject.ProjectDeleteTests">
+    <Position X="13.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAEABAAAAAAAAAAAAAAIBAEAAABACAAAAAA=</HashCode>
+      <FileName>Tests\ProjectDeleteTests.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_projectDeleteService" />
+    </ShowAsAssociation>
+  </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
