@@ -100,7 +100,7 @@
     <Compile Include="Tasks\HTTPManager\TaskGetCallManager.cs" />
     <Compile Include="Tasks\Services\TaskDeleteService.cs" />
     <Compile Include="Tasks\Services\TaskGetService.cs" />
-    <Compile Include="Tests\TaskDeleteTests.cs" />
+    <Compile Include="Tests\Tasks\TaskDeleteTests.cs" />
     <Compile Include="Tests\ProjectEditTests.cs" />
     <Compile Include="Tests\ProjectCreateTests.cs" />
     <Compile Include="Tests\ProjectGetTests.cs" />
