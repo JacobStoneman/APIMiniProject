@@ -6,6 +6,8 @@ namespace APIMiniProject
 	public class TaskGetTests
 	{
 		TaskGetService _taskGetService = new TaskGetService();
+		TaskDeleteService _taskDeleteService = new TaskDeleteService();
+		TaskCreateService _taskCreateService = new TaskCreateService(new TaskCreateCallManager(new RestClient(AppConfigReader.BaseUrl)));
 		private long testProjID;
 
 		[OneTimeSetUp]
@@ -23,6 +25,13 @@ namespace APIMiniProject
 			projectDeleteService.DeleteProject(testProjID);
 		}
 
+		long CreateTestTask() 
+		{
+			_taskCreateService.CreateTaskDueString(taskContent: "TestContent");
+			return _taskCreateService.TaskDTO.Task.Id;
+		}
+		void DeleteTestTask(long id) => _taskDeleteService.DeleteTask(id);
+
 		[Test]
 		public void GetActiveTasksRequestOK()
 		{
@@ -32,66 +41,45 @@ namespace APIMiniProject
 		}
 
 		[Test]
-		[Ignore("Waiting for create and delete task services")]
+		public void GetActiveTaskByIDRequestOK()
+		{
+			long testTaskID = CreateTestTask();
+
+			_taskGetService.GetActiveTaskByID(testTaskID);
+			Assert.That(_taskGetService.StatusCode, Is.EqualTo(200));
+			Assert.That(_taskGetService.StatusMessage, Is.EqualTo("OK"));
+
+			DeleteTestTask(testTaskID);
+		}
+
+		[Test]
+		public void GetActiveTaskByInvalidIDRequestNotFound()
+		{
+			_taskGetService.GetActiveTaskByID(-1);
+			Assert.That(_taskGetService.StatusCode, Is.EqualTo(404));
+			Assert.That(_taskGetService.StatusMessage, Is.EqualTo("NotFound"));
+		}
+
+		[Test]
+		public void GetActiveTaskByIDReturnsCorrectContent()
+		{
+			long testTaskID = CreateTestTask();
+
+			_taskGetService.GetActiveTaskByID(testTaskID);
+			Assert.That(_taskGetService.Result.Tasks[0].Content, Is.EqualTo("TestContent"));
+
+			DeleteTestTask(testTaskID);
+		}
+
+		[Test]
 		public void GetActiveTasksByProjectID()
 		{
-			//Create task
+			long testTaskID = CreateTestTask();
 
 			_taskGetService.GetActiveTasks(projectID: testProjID);
 			Assert.That(_taskGetService.Result.Tasks.Length, Is.GreaterThan(0));
 
-			//Delete task
-		}
-
-		[Test]
-		[Ignore("Waiting for create and delete task services")]
-		public void GetSingleActiveTaskByID()
-		{
-			//Create task
-
-			_taskGetService.GetActiveTasks();
-			Assert.That(_taskGetService.Result.Tasks.Length, Is.GreaterThan(0));
-
-			//Delete task
-		}
-
-		[Test]
-		[Ignore("Waiting for create and delete task services")]
-		public void GetActiveTasksByIDs()
-		{
-			//Create tasks
-
-			//get task ids
-			long[] taskIDs = new long[0];
-
-			_taskGetService.GetActiveTasks(IDs: taskIDs);
-			Assert.That(_taskGetService.Result.Tasks.Length, Is.GreaterThan(0));
-
-			//Delete tasks
-		}
-
-		[Test]
-		[Ignore("Waiting for create and delete task services")]
-		public void GetActiveTasksByFilter()
-		{
-			//Create task
-
-			_taskGetService.GetActiveTasks(Filter: "TestTask");
-			Assert.That(_taskGetService.Result.Tasks.Length, Is.GreaterThan(0));
-
-			//Delete task
-		}
-
-		[Test]
-		[Ignore("Waiting for create and delete task services")]
-		public void GetActiveTasksByFilterAndProjectID()
-		{
-			//Create task
-
-			_taskGetService.GetActiveTasks(projectID: testProjID,Filter: "TestTask");
-			Assert.That(_taskGetService.Result.Tasks.Length, Is.GreaterThan(0));
-
-			//Delete task
+			DeleteTestTask(testTaskID);
 		}
 	}
 }
