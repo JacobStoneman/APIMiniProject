@@ -109,10 +109,5 @@ namespace APIMiniProject
             Assert.That(responseDTO.Parent_id, Is.EqualTo(inboxId));
             Assert.That(responseDTO.Favorite, Is.True);
         }
-
-
-
-
-
     }
 }
