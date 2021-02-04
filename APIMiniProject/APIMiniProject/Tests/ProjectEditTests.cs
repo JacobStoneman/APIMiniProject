@@ -76,9 +76,8 @@ namespace APIMiniProject
         [OneTimeTearDown]
         public void TearDownMethod()
         {
-            _client = new RestClient(AppConfigReader.BaseUrl);
             _editService = new ProjectEditService(new ProjectEditCallManager(_client));
-            RestRequest deleteRequest = new RestRequest("projects", Method.DELETE);
+            RestRequest deleteRequest = new RestRequest(Method.DELETE);
             deleteRequest.AddHeader("Authorization", $"Bearer {AppConfigReader.BearerToken}");
             deleteRequest.Resource = $"projects/{createdProjectId}";
             _client.Execute(deleteRequest);
