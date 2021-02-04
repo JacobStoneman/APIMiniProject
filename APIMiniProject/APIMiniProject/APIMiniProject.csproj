@@ -93,7 +93,7 @@
     <Compile Include="Services\Services\ProjectPutService.cs" />
     <Compile Include="Services\Services\ProjectGetService.cs" />
     <Compile Include="Services\Services\ProjectService.cs" />
-    <Compile Include="Tests\ProjectDeleteTests.cs" />
+    <Compile Include="Tasks\HTTPManager\TaskGetCallManager.cs" />
     <Compile Include="Tests\ProjectEditTests.cs" />
     <Compile Include="Tests\ProjectCreateTests.cs" />
     <Compile Include="Tests\ProjectGetTests.cs" />

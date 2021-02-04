@@ -12,9 +12,9 @@ namespace APIMiniProject
 	{
 		public ProjectEditCallManager ProjectEditCallManager { get; set; }
 		public int Status { get; set; }
-		public ProjectEditService(IRestClient client)
+		public ProjectEditService(ProjectEditCallManager projectEditCallManager)
 		{
-			ProjectEditCallManager = new ProjectEditCallManager(client);
+			ProjectEditCallManager = projectEditCallManager;
 		}
 
 		public void EditProject(int id, string name, int color = -1)
