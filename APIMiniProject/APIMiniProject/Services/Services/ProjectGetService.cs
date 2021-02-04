@@ -65,6 +65,19 @@ namespace APIMiniProject
 			Result.ProjectList = ProjectsByName.ToArray();
 		}
 
+		public void GetAllByFavourite()
+		{
+			GetAllProjects();
+
+			List<Project> ProjectsByFavourite = new List<Project>();
+			foreach (Project proj in Result.ProjectList)
+			{
+				if (proj.Favorite) ProjectsByFavourite.Add(proj);
+			}
+
+			Result.ProjectList = ProjectsByFavourite.ToArray();
+		}
+
 		public int GetProjectCount()
 		{
 			GetAllProjects();
