@@ -90,7 +90,6 @@
     <Compile Include="Projects\Services\ProjectEditService.cs" />
     <Compile Include="Projects\Services\ProjectCreateService.cs" />
     <Compile Include="Projects\Services\ProjectDeleteService.cs" />
-    <Compile Include="Projects\Services\ProjectPutService.cs" />
     <Compile Include="Projects\Services\ProjectGetService.cs" />
     <Compile Include="Shared\Services\Service.cs" />
     <Compile Include="Tasks\DataHandling\TaskDTO.cs" />
@@ -105,10 +104,10 @@
     <Compile Include="Tasks\Services\TaskDeleteService.cs" />
     <Compile Include="Tasks\Services\TaskGetService.cs" />
     <Compile Include="Tests\TaskDeleteTests.cs" />
-    <Compile Include="Tests\ProjectEditTests.cs" />
-    <Compile Include="Tests\ProjectCreateTests.cs" />
-    <Compile Include="Tests\ProjectGetTests.cs" />
-    <Compile Include="Tests\ProjectDeleteTests.cs" />
+    <Compile Include="Tests\Projects\ProjectEditTests.cs" />
+    <Compile Include="Tests\Projects\ProjectCreateTests.cs" />
+    <Compile Include="Tests\Projects\ProjectGetTests.cs" />
+    <Compile Include="Tests\Projects\ProjectDeleteTests.cs" />
     <Compile Include="Tests\Tasks\TaskCreateTests.cs" />
     <Compile Include="Tests\Tasks\TaskEditTests.cs" />
     <Compile Include="Tests\Tasks\TaskGetTests.cs" />
