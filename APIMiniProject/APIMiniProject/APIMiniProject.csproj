@@ -108,10 +108,9 @@
     <Compile Include="Tests\Projects\ProjectGetTests.cs" />
     <Compile Include="Tests\Projects\ProjectDeleteTests.cs" />
     <Compile Include="Tests\Tasks\TaskCreateTests.cs" />
-    <Compile Include="Tests\Tasks\TaskDeleteTests2.cs" />
     <Compile Include="Tests\Tasks\TaskEditTests.cs" />
     <Compile Include="Tests\Tasks\TaskGetTests.cs" />
-	<Compile Include="Tests\Tasks\TaskDeleteTests.cs" />
+    <Compile Include="Tests\Tasks\TaskDeleteTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
