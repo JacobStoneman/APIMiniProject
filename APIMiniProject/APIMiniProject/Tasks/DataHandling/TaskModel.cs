@@ -22,6 +22,7 @@ namespace APIMiniProject
         public DateTime Created { get; set; }
         public DueDate Due { get; set; }
         public string Url { get; set; }
+        public long Parent_id { get; set; }
     }
 
     public class DueDate
