@@ -20,7 +20,7 @@ namespace APIMiniProject
             TaskCreateCallManager = taskCreateCallManager;
         }
 
-        public void CreateTask(string taskContent, long? projectId = null, long? sectionId = null, bool completed = false, long? parentId = null,
+        public void CreateTaskDueString(string taskContent, long? projectId = null, long? sectionId = null, bool completed = false, long? parentId = null,
             int? order = null, int? priority = null, string dueString = null, string dueLang = null)
         {
             JObject parameters = new JObject();
@@ -45,7 +45,7 @@ namespace APIMiniProject
             }
         }
 
-        public void CreateTask(string taskContent, long? projectId = null, long? sectionId = null, bool completed = false, long? parentId = null,
+        public void CreateTaskDueDateString(string taskContent, long? projectId = null, long? sectionId = null, bool completed = false, long? parentId = null,
             int? order = null, string dueDate = null, int? priority = null, string dueLang = null)
         {
             JObject parameters = new JObject();
@@ -70,7 +70,7 @@ namespace APIMiniProject
             }
         }
 
-        public void CreateTask(string taskContent, long? projectId = null, long? sectionId = null, bool completed = false, long? parentId = null,
+        public void CreateTaskDueDateTime(string taskContent, long? projectId = null, long? sectionId = null, bool completed = false, long? parentId = null,
             int? order = null, int? priority = null, DateTime? dueDateTime = null, string dueLang = null)
         {
             JObject parameters = new JObject();

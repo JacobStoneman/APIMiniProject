@@ -31,7 +31,7 @@ namespace APIMiniProject
         [Test]
         public void WhenCreateIsCalledCorrectly_StatusIsOk()
         {
-            _createService.CreateTask("Test");
+            _createService.CreateTaskDueDateTime("Test");
             _createdTaskId = _createService.TaskDTO.Task.Id;
             Assert.That(_createService.StatusMessage, Is.EqualTo("OK"));
         }
