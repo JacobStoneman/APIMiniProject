@@ -21,20 +21,23 @@ namespace APIMiniProject
             ProjectCreateCallManager = projectCreateCallManager;
         }
 
-        public void CreateProject(string name, int parentId = -1, int colour = -1, bool favourite = false)
+        public void CreateProject(string name, long parentId = -1, int colour = -1, bool favourite = false)
         {
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             parameters.Add("name", name);
             if (parentId != -1) { parameters.Add("parent_id", parentId); }
-            if (parentId != -1) { parameters.Add("color", colour); }
+            if (colour != -1) { parameters.Add("color", colour); }
             parameters.Add("favorite", favourite.ToString().ToLower());
 
             IRestResponse response = ProjectCreateCallManager.CreateProject(parameters);
             Status = response.StatusCode.ToString();
             
             string content = response.Content;
-            ProjectDTO.DeserialiseProject(content);
-            ProjectJson = JsonConvert.DeserializeObject<JObject>(content);
+            if(Status.Equals("OK")){ 
+                ProjectDTO.DeserialiseProject(content);
+                ProjectJson = JsonConvert.DeserializeObject<JObject>(content);
+            }
+            
         }
     }
 }
