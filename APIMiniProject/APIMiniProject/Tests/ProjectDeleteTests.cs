@@ -34,9 +34,7 @@ namespace APIMiniProject
         [Test]
         public void TheProjectIsNoLongerThereByGetProject()
         {
-            long id = _createService.ProjectDTO.Project.Id;
-            _projectGetService.GetProjectByID(id);
-            Assert.That(_projectGetService.StatusCode, Is.EqualTo(404)); //404: NotFound
+            Assert.That(_projectGetService.GetProjectByID(2257480369).Status, Is.EqualTo(404)); //404: NotFound
 
         }
 
