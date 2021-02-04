@@ -9,12 +9,11 @@ using System.Threading.Tasks;
 
 namespace APIMiniProject
 {
-    public class ProjectCreateService
+    public class ProjectCreateService : ProjectService
     {
         public ProjectCreateCallManager ProjectCreateCallManager { get; set; }
         public ProjectDTO ProjectDTO { get; set; } = new ProjectDTO();
         public JObject ProjectJson { get; set; }
-        public string Status { get; set; }
 
         public ProjectCreateService(ProjectCreateCallManager projectCreateCallManager)
         {
@@ -30,10 +29,10 @@ namespace APIMiniProject
             parameters.Add("favorite", favourite.ToString().ToLower());
 
             IRestResponse response = ProjectCreateCallManager.CreateProject(parameters);
-            Status = response.StatusCode.ToString();
-            
+            SetStatus(response);
+
             string content = response.Content;
-            if(Status.Equals("OK")){ 
+            if(StatusMessage.Equals("OK")){ 
                 ProjectDTO.DeserialiseProject(content);
                 ProjectJson = JsonConvert.DeserializeObject<JObject>(content);
             }
