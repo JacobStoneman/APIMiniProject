@@ -2,7 +2,7 @@
 
 namespace APIMiniProject
 {
-	public class ProjectDeleteService
+	public class ProjectDeleteService : ProjectService
 	{
 		public ProjectDeleteCallManager CallManager { get; set; } = new ProjectDeleteCallManager(new RestClient(AppConfigReader.BaseUrl));
 		public ProjectDTO Result { get; set; } = new ProjectDTO();
