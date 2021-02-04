@@ -14,11 +14,13 @@ namespace APIMiniProject
 		{
 		}
 
-		public IRestResponse PostProject(int id, JObject jsonbody)
+		public IRestResponse PostProject(long id, JObject jsonbody)
 		{
 			IRestRequest request = new RestRequest(Method.POST);
 			request.Resource = $"projects/{id}";
 			request.AddJsonBody(jsonbody.ToString());
+			request.AddHeader("Authorization", $"Bearer {AppConfigReader.BearerToken}");
+
 
 			return ExecuteRequest(request);
 		}

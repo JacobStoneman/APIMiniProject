@@ -1,4 +1,5 @@
 ﻿using RestSharp;
+using System.Collections.Generic;
 
 namespace APIMiniProject
 {
@@ -6,15 +7,14 @@ namespace APIMiniProject
     {
         public ProjectCreateCallManager(IRestClient restClient) : base(restClient) { }
 
-        public IRestResponse CreateProject(string name, int parentId = -1, int colour = -1, bool favourite = false)
+        public IRestResponse CreateProject(Dictionary<string,object> parameters)
         {
             RestRequest request = new RestRequest("projects", Method.POST);
             request.AddHeader("Authorization", $"Bearer {AppConfigReader.BearerToken}");
-            request.AddParameter("name", name);
-            request.AddParameter("favorite", favourite);
-            if (parentId > 0) { request.AddParameter("parent_id", parentId); }
-            if(colour > 0) { request.AddParameter("color", parentId); }
-
+            foreach (var parameter in parameters)
+            {
+                request.AddParameter(parameter.Key, parameter.Value);
+            }
             return ExecuteRequest(request);
         }
     }

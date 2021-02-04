@@ -12,19 +12,22 @@ namespace APIMiniProject
 	{
 		public ProjectEditCallManager ProjectEditCallManager { get; set; }
 		public int Status { get; set; }
+		public string ResponseContent { get; set; }
 		public ProjectEditService(ProjectEditCallManager projectEditCallManager)
 		{
 			ProjectEditCallManager = projectEditCallManager;
 		}
 
-		public void EditProject(int id, string name, int color = -1)
+		public void EditProject(long id, string name, int color = -1)
 		{
 			JObject jsonbody = new JObject(new JProperty("name", name));
 			if (color > -1)
 			{
 				jsonbody.Add("color", color);
 			}
-			Status = (int)ProjectEditCallManager.PostProject(id, jsonbody).StatusCode;
+			var response = ProjectEditCallManager.PostProject(id, jsonbody);
+			Status = (int)response.StatusCode;
+			ResponseContent = response.Content;
 		}
 	}
 }
