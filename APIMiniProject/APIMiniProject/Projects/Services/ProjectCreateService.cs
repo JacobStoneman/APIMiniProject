@@ -36,7 +36,6 @@ namespace APIMiniProject
                 ProjectDTO.DeserialiseProject(content);
                 ProjectJson = JsonConvert.DeserializeObject<JObject>(content);
             }
-            
         }
     }
 }
