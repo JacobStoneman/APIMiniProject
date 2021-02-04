@@ -2,7 +2,7 @@
 
 namespace APIMiniProject
 {
-	public class TaskGetService : ProjectService
+	public class TaskGetService : Service
 	{
 		public TaskGetCallManager CallManager { get; set; } = new TaskGetCallManager(new RestClient(AppConfigReader.BaseUrl));
 
@@ -12,10 +12,10 @@ namespace APIMiniProject
 			//if (StatusMessage == "OK") Result.DeserialiseProjectList(response.Content, isArray);
 		}
 
-		public void GetActiveTasksByID(long? projectID = null, long? labelID = null, string Filter = null, string Lang = null, long[] IDs = null)
+		public void GetActiveTasks(long? projectID = null, long? labelID = null, string Filter = null, string Lang = null, long[] IDs = null)
 		{
 			TaskParameter newParameters = new TaskParameter(projectID, labelID, Filter, Lang, IDs);
-			ProcessResult(CallManager.GetActiveTasksByID(newParameters));
+			ProcessResult(CallManager.GetActiveTasks(newParameters));
 		}
 	}
 }

@@ -99,6 +99,7 @@
     <Compile Include="Tests\ProjectCreateTests.cs" />
     <Compile Include="Tests\ProjectGetTests.cs" />
     <Compile Include="Tests\ProjectDeleteTests.cs" />
+    <Compile Include="Tests\Tasks\TaskGetTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
