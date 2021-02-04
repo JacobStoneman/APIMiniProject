@@ -22,17 +22,22 @@ namespace APIMiniProject
             string createResponse = _client.Execute(createRequest).Content;
             JObject jsonResponse = JObject.Parse(createResponse);
             createdProjectId = jsonResponse["id"].ToString();
-
-            
-
         }
 
 
         [Test]
-        public void PostCallReturnsSuccesful()
+        public void PostCallReturnsSuccesfulWhenIdExists()
         {
             _editService.EditProject(long.Parse(createdProjectId), "NewTestName");
             Assert.That(_editService.Status, Is.EqualTo(204));
+
+        }
+
+        [Test]
+        public void PostCallReturnsNotFoundWhenIdDoesNotExist()
+        {
+            _editService.EditProject(-1, "NewTestName");
+            Assert.That(_editService.Status, Is.EqualTo(404));
 
         }
 
@@ -48,6 +53,21 @@ namespace APIMiniProject
             string updatedName = jsonResponse["name"].ToString();
 
             Assert.That(updatedName, Is.EqualTo("NewTestName"));
+
+        }
+
+        [Test]
+        public void PostCallSuccessfullyUpdatesColour()
+        {
+            _editService.EditProject(long.Parse(createdProjectId), "NewTestName",48);
+            RestRequest getRequest = new RestRequest(Method.GET);
+            getRequest.AddHeader("Authorization", $"Bearer {AppConfigReader.BearerToken}");
+            getRequest.Resource = $"projects/{createdProjectId}";
+            string getResponse = _client.Execute(getRequest).Content;
+            JObject jsonResponse = JObject.Parse(getResponse);
+            string updatedColour = jsonResponse["color"].ToString();
+
+            Assert.That(updatedColour, Is.EqualTo("48"));
 
         }
 
