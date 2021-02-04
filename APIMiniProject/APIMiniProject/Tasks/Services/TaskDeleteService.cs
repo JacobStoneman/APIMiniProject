@@ -12,7 +12,7 @@ namespace APIMiniProject
 		{
 			IRestResponse response = CallManager.DeleteTask(id);
 			Status = (int)response.StatusCode;
-			Result.DeserialiseProject(response.Content);
+			Result.DeserialiseTask(response.Content);
 		}
 
 	}
