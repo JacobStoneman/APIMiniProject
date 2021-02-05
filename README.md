@@ -25,7 +25,10 @@ The API adheres to HTTP which means it is interacted with through the usual HTTP
 
 <h3>Services and Managers</h3>
 
-<p>All the requests require a user token for authentication. </p>
+In order to make and handle API requests, services and call manager classes are used which are responsible for both building the request and sending it to the client to be executed.
+For each CRUD function for both projects and tasks, a relevant service provides methods that allow the user to query the API and return the requested information. In the case of projects, the user is able to retrieve a project by a given ID or retrieve all projects, with the option to filter these by different attributes such as colour or favourites. This is also the case for tasks which can be retrieved by an ID, group of ID's or filtered by task attributes passed in as parameters. New tasks and projects can also be created as well as updated and deleted.
+When one of these methods are called, it is passed to the call manager which takes the given parameters and builds a request ready to send to the client to be executed. The call manager is also responsible for passing the bearer token into the request to authorise the call with the API.
+Both the services and the call managers inherit from base classes which contain the generic properties needed, including the status code and message and the client used to execute requests.
 
 <b>Something about the structure of how we access the API</b>
 
