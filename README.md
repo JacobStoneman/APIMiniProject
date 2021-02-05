@@ -20,6 +20,7 @@ The API allows you to create a to-do list by defining a project and then assigni
 The API adheres to HTTP which means it is interacted with through the usual HTTP verbs. A GET request enables the user to view single or multiple projects and tasks. A POST request with parameters included in the body allows for creating new projects/tasks whilst the DELETE request allows for removing projects and tasks.
 
 <h3>Class Diagram</h3>
+![Class Diagram](https://github.com/JacobStoneman/APIMiniProject/blob/main/classdiagram%20%20todo%20api.png)
 
 <b>Insert class diagram here.</b>
 
@@ -42,7 +43,9 @@ This includes testing that the name and other characteristics of projects/tasks 
 
 <h2>Project Review</h2>
 
-
+<p>All user stories in the project backlog were completed by the deadline. Our Definion of Done included ensuring the code was readable and all API calls were covered in tests which was completed. </p>
+<p>The API Framework was created to ensure it would be scalable to test the remaining endpoints.</p>
+<p>Next stages would include testing the Sections and Comments to ensure the API endpoints were working.</p>
 
 <h2>Project Retrospective</h2>
 
