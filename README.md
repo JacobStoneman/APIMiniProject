@@ -46,5 +46,7 @@ This includes testing that the name and other characteristics of projects/tasks 
 <p>Overall, the project was carried out well. Planning of the project took place immediately after the initial selection of the API for testing through the development of user stories. Once these were created, the team was able to set up an initial project structure
 which the outcome of each user story could be implemented on. From here, the team was able to distribute tasks to be completed by each team member and these were all delivered by the end of the project sprint. Communication was absolutely vital throughout this process to avoid difficult merge conflicts and damage of existing code.
 </p>
+<p>Furthermore, user stories were grouped into two so that they could be tackled, one after the other. This enabled the team to standardise the code and reflect on progress made after the first group, so that any improvements could be passed through to the second. This allowed for some refactoring; however, it was not as much as we had hoped for, due to time constraints. To better improve on the development process, there should have been a specific timeframe for refactoring as a group.</p>
+
 
 <p>To better improve upon this project, better branch structure in the Github repo would make for a less risky way of adding updates to the project. No serious issues occurred during this project but with more people and a longer project, separating out the dev from the main would be imperative.</p>
