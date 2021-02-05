@@ -20,7 +20,7 @@ The API allows you to create a to-do list by defining a project and then assigni
 The API adheres to HTTP which means it is interacted with through the usual HTTP verbs. A GET request enables the user to view single or multiple projects and tasks. A POST request with parameters included in the body allows for creating new projects/tasks whilst the DELETE request allows for removing projects and tasks.
 
 <h3>Class Diagram</h3>
-![ClassDiagram](https://github.com/JacobStoneman/APIMiniProject/blob/main/classdiagram%20%20todo%20api.png)
+![ClassDiagram](https://github.com/JacobStoneman/APIMiniProject/blob/main/classdiagram%20%20todo%20api.png?raw=true)
 
 <b>Insert class diagram here.</b>
 
