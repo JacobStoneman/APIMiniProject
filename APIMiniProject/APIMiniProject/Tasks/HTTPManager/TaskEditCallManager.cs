@@ -25,6 +25,16 @@ namespace APIMiniProject
 			return ExecuteRequest(request);
 		}
 
+		public IRestResponse CompleteTask(long id)
+		{
+			IRestRequest request = new RestRequest(Method.POST);
+			request.Resource = $"tasks/{id}/close";
+			request.AddHeader("Authorization", $"Bearer {AppConfigReader.BearerToken}");
+
+
+			return ExecuteRequest(request);
+		}
+
 
 	}
 }

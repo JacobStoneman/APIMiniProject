@@ -40,6 +40,44 @@ namespace APIMiniProject
 
 		}
 
+		[Test]
+		public void PostCallSuccessfullyUpdatesContent()
+		{
+			_editService.EditTask(long.Parse(createdTaskId), "NewTestName");
+			RestRequest getRequest = new RestRequest(Method.GET);
+			getRequest.AddHeader("Authorization", $"Bearer {AppConfigReader.BearerToken}");
+			getRequest.Resource = $"tasks/{createdTaskId}";
+			string getResponse = _client.Execute(getRequest).Content;
+			JObject jsonResponse = JObject.Parse(getResponse);
+			string updatedName = jsonResponse["content"].ToString();
+
+			Assert.That(updatedName, Is.EqualTo("NewTestName"));
+
+		}
+
+		[Test]
+		public void WhenTaskIsCompletedItIsDeleted()
+		{
+			_client = new RestClient(AppConfigReader.BaseUrl);
+			_editService = new TaskEditService(new TaskEditCallManager(_client));
+			RestRequest createRequest = new RestRequest("tasks", Method.POST);
+			createRequest.AddHeader("Authorization", $"Bearer {AppConfigReader.BearerToken}");
+			JObject jsonbody = new JObject(new JProperty("content", "TestCompleteTask"), new JProperty("project_id", 2257376455));
+			createRequest.AddJsonBody(jsonbody.ToString());
+			string createResponse = _client.Execute(createRequest).Content;
+			JObject jsonResponse = JObject.Parse(createResponse);
+			string completeTaskId = jsonResponse["id"].ToString();
+
+			_editService.CompleteTask(long.Parse(completeTaskId));
+
+			RestRequest getRequest = new RestRequest(Method.GET);
+			getRequest.AddHeader("Authorization", $"Bearer {AppConfigReader.BearerToken}");
+			getRequest.Resource = $"tasks/{completeTaskId}";
+			string getResponseCode = _client.Execute(getRequest).StatusCode.ToString();
+
+			Assert.That(getResponseCode, Is.EqualTo("NotFound"));
+		}
+
 		[OneTimeTearDown]
 		public void TearDownMethod()
 		{
