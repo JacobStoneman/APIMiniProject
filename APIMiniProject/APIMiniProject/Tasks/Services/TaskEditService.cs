@@ -53,5 +53,12 @@ namespace APIMiniProject
 			Status = (int)response.StatusCode;
 			ResponseContent = response.Content;
 		}
+
+		public void CompleteTask(long id)
+		{
+			var response = TaskEditCallManager.CompleteTask(id);
+			Status = (int)response.StatusCode;
+			ResponseContent = response.Content;
+		}
 	}
 }
